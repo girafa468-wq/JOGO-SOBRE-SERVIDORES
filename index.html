@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff8f3">
+    <title>Missão Internet: do domínio ao servidor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="inner">
+        <header class="top">
+          <div class="brand">
+            <span class="mascot" aria-hidden="true">&#9633;</span>
+            <span>MISSÃO INTERNET</span>
+          </div>
+          <span class="pill">APRENDER JOGANDO</span>
+        </header>
+
+        <main>
+          <section id="start-screen" aria-labelledby="main-title">
+            <div class="hero">
+              <div>
+                <span class="eyebrow">UMA AVENTURA PELA WEB</span>
+                <h1 id="main-title">Missão Internet: do domínio ao servidor</h1>
+                <p class="sub">Descubra como uma página chega até você. Resolva desafios, siga o caminho de uma solicitação e prepare uma encenação com sua turma!</p>
+                <button id="start-button" class="btn primary" type="button">Começar jogo <span aria-hidden="true">&#8594;</span></button>
+              </div>
+              <div class="hero-art" aria-hidden="true">
+                <span class="big-packet">&#128230;</span>
+              </div>
+            </div>
+            <div class="instructions">
+              <h2>Como jogar</h2>
+              <ol>
+                <li>Responda aos desafios para desbloquear a próxima fase.</li>
+                <li>Cada acerto vale 10 pontos. Você tem três corações por fase.</li>
+                <li>Se os corações acabarem, tente a fase novamente.</li>
+              </ol>
+            </div>
+          </section>
+
+          <section id="game-screen" hidden aria-label="Jogo">
+            <div class="game-head">
+              <h2>Sua trilha de aprendizagem</h2>
+              <div class="stats" aria-live="polite">
+                <span class="pill"><span aria-hidden="true">&#11088;</span> <span id="score">0</span> pontos</span>
+                <span class="pill"><span aria-hidden="true">&#10084;&#65039;</span> <span id="hearts">3</span> corações</span>
+                <span class="pill"><span id="progress-label">Fase 1 de 6</span></span>
+              </div>
+            </div>
+            <div id="progress-bar" class="bar" role="progressbar" aria-label="Progresso das fases" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0">
+              <div id="progress-fill"></div>
+            </div>
+            <div class="layout">
+              <nav class="trail" aria-label="Selecionar fase">
+                <button class="phase" type="button" data-phase="0">01 · Domínio</button>
+                <button class="phase" type="button" data-phase="1">02 · Hospedagem</button>
+                <button class="phase" type="button" data-phase="2">03 · Servidor</button>
+                <button class="phase" type="button" data-phase="3">04 · DNS</button>
+                <button class="phase" type="button" data-phase="4">05 · A viagem</button>
+                <button class="phase" type="button" data-phase="5">06 · Encenação</button>
+              </nav>
+              <div>
+                <section class="panel stage" data-stage="0">
+                  <span class="eyebrow">FASE 01 / O ENDEREÇO</span>
+                  <h2>O que é um domínio?</h2>
+                  <p class="lesson">Domínio é o endereço legível de um site, como exemplo.com. Ele ajuda as pessoas a encontrar o site sem decorar números.</p>
+                  <p class="question">Qual destes exemplos é um domínio, ou seja, o nome legível usado para acessar um site?</p>
+                  <div class="choices">
+                    <button type="button" class="option" data-answer="0">192.0.2.10, um endereço IP</button>
+                    <button type="button" class="option" data-answer="1">escola-exemplo.com</button>
+                    <button type="button" class="option" data-answer="2">index.html, um arquivo do site</button>
+                    <button type="button" class="option" data-answer="3">HTTP, um protocolo de comunicação</button>
+                  </div>
+                </section>
+
+                <section class="panel stage" data-stage="1" hidden>
+                  <span class="eyebrow">FASE 02 / A CASA DOS ARQUIVOS</span>
+                  <h2>Onde o site fica?</h2>
+                  <p class="lesson">Hospedagem é o serviço e o espaço onde os arquivos de um site ficam armazenados e disponíveis na internet.</p>
+                  <p class="question">Qual é a principal função da hospedagem de um site?</p>
+                  <div class="choices">
+                    <button type="button" class="option" data-answer="0">Converter o domínio em um endereço IP</button>
+                    <button type="button" class="option" data-answer="1">Registrar o nome de domínio do site</button>
+                    <button type="button" class="option" data-answer="2">Armazenar e disponibilizar os arquivos do site</button>
+                    <button type="button" class="option" data-answer="3">Criar o conteúdo e as imagens da página</button>
+                  </div>
+                </section>
+
+                <section class="panel stage" data-stage="2" hidden>
+                  <span class="eyebrow">FASE 03 / QUEM RESPONDE?</span>
+                  <h2>Conheça o servidor</h2>
+                  <p class="lesson">Servidor é um computador ou sistema que armazena e entrega recursos e respostas aos usuários quando recebe solicitações.</p>
+                  <p class="question">Ao receber uma solicitação, qual é o papel do servidor na visita a um site?</p>
+                  <div class="choices">
+                    <button type="button" class="option" data-answer="0">Entrega os recursos solicitados, se disponíveis</button>
+                    <button type="button" class="option" data-answer="1">Registra um novo domínio para o usuário</button>
+                    <button type="button" class="option" data-answer="2">Traduz o domínio em um endereço IP</button>
+                    <button type="button" class="option" data-answer="3">Abre o navegador no computador do usuário</button>
+                  </div>
+                </section>
+
+                <section class="panel stage" data-stage="3" hidden>
+                  <span class="eyebrow">FASE 04 / A AGENDA DA INTERNET</span>
+                  <h2>DNS: nome encontra número</h2>
+                  <p class="lesson">O DNS ajuda a encontrar o endereço IP correspondente a um domínio. É como uma agenda da internet: você procura um nome e encontra um endereço.</p>
+                  <p class="sub">Exemplo fictício desta atividade: escola-exemplo.com → 192.0.2.10. Esse IP é reservado para documentação.</p>
+                  <p class="question">De acordo com o exemplo fictício desta fase, qual IP corresponde a escola-exemplo.com?</p>
+                  <div class="choices">
+                    <button type="button" class="option" data-answer="0">198.51.100.25</button>
+                    <button type="button" class="option" data-answer="1">192.0.2.10</button>
+                    <button type="button" class="option" data-answer="2">O nome de usuário do site</button>
+                    <button type="button" class="option" data-answer="3">O arquivo HTML da página</button>
+                  </div>
+                </section>
+
+                <section class="panel stage" data-stage="4" hidden>
+                  <span class="eyebrow">FASE 05 / SIGA O PACOTE</span>
+                  <h2>A viagem da solicitação</h2>
+                  <p class="sub">Acompanhe uma versão simplificada do caminho. Escolha a resposta certa em cada parada.</p>
+                  <div class="step-track" aria-label="Etapas da viagem">
+                    <span class="step-chip" data-chip="0">1 Usuário</span><span aria-hidden="true">&#8594;</span>
+                    <span class="step-chip" data-chip="1">2 Domínio</span><span aria-hidden="true">&#8594;</span>
+                    <span class="step-chip" data-chip="2">3 DNS</span><span aria-hidden="true">&#8594;</span>
+                    <span class="step-chip" data-chip="3">4 Servidor</span><span aria-hidden="true">&#8594;</span>
+                    <span class="step-chip" data-chip="4">5 Resposta</span>
+                  </div>
+                  <div class="travel-step" data-step="0">
+                    <h3>1. Usuário</h3>
+                    <p class="question">Qual ação do usuário inicia a solicitação para abrir um site?</p>
+                    <div class="choices">
+                      <button class="option" type="button" data-answer="0">A pessoa pede ao navegador para abrir uma página</button>
+                      <button class="option" type="button" data-answer="1">O site aparece sem solicitação</button>
+                    </div>
+                  </div>
+                  <div class="travel-step" data-step="1" hidden>
+                    <h3>2. Domínio</h3>
+                    <p class="question">Que tipo de endereço a pessoa pode informar ao navegador para localizar o site?</p>
+                    <div class="choices">
+                      <button class="option" type="button" data-answer="0">O nome de um arquivo salvo no computador</button>
+                      <button class="option" type="button" data-answer="1">Um domínio, como escola-exemplo.com</button>
+                    </div>
+                  </div>
+                  <div class="travel-step" data-step="2" hidden>
+                    <h3>3. DNS</h3>
+                    <p class="question">Como o DNS ajuda o navegador a encontrar o servidor do site?</p>
+                    <div class="choices">
+                      <button class="option" type="button" data-answer="0">Localiza o endereço IP associado ao domínio</button>
+                      <button class="option" type="button" data-answer="1">Envia os arquivos da página para a tela</button>
+                    </div>
+                  </div>
+                  <div class="travel-step" data-step="3" hidden>
+                    <h3>4. Servidor</h3>
+                    <p class="question">Depois que o endereço IP é localizado, para onde a solicitação é encaminhada?</p>
+                    <div class="choices">
+                      <button class="option" type="button" data-answer="0">Ao mouse</button>
+                      <button class="option" type="button" data-answer="1">Ao servidor</button>
+                    </div>
+                  </div>
+                  <div class="travel-step" data-step="4" hidden>
+                    <h3>5. Resposta ao usuário</h3>
+                    <p class="question">Quando o servidor encontra os recursos pedidos, o que ele envia de volta ao navegador?</p>
+                    <div class="choices">
+                      <button class="option" type="button" data-answer="0">Os arquivos e dados necessários para exibir a página</button>
+                      <button class="option" type="button" data-answer="1">Um novo endereço de domínio para o usuário</button>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="panel stage" data-stage="5" hidden>
+                  <span class="eyebrow">FASE FINAL / MÃO NA MASSA</span>
+                  <h2>Encenação na sala de aula</h2>
+                  <p class="sub">Formem um grupo de quatro alunos. Cada pessoa representa um papel da viagem simplificada.</p>
+                  <div class="role-grid">
+                    <div class="role"><h3>Usuário</h3><p>Pede para abrir escola-exemplo.com.</p></div>
+                    <div class="role"><h3>Domínio</h3><p>Mostra o nome legível do site pedido.</p></div>
+                    <div class="role"><h3>DNS</h3><p>Consulta o nome e indica o IP correspondente.</p></div>
+                    <div class="role"><h3>Servidor</h3><p>Recebe o pedido e envia os recursos do site.</p></div>
+                  </div>
+                  <h3>Roteiro em 5 passos</h3>
+                  <ol class="script-list">
+                    <li>Usuário: “Quero abrir escola-exemplo.com!”</li>
+                    <li>Domínio: “Este é o nome legível do site.”</li>
+                    <li>DNS: “Encontrei o IP de exemplo 192.0.2.10!”</li>
+                    <li>Servidor: “Recebi o pedido e vou enviar os recursos.”</li>
+                    <li>Usuário: “Recebi a resposta; agora vejo a página!”</li>
+                  </ol>
+                  <p class="sub">O domínio e o IP acima são apenas exemplos fictícios para a atividade.</p>
+                  <button id="finish-button" class="btn primary" type="button">Concluir missão <span aria-hidden="true">&#8594;</span></button>
+                </section>
+
+                <div id="feedback-good" class="feedback good" role="status" hidden>Isso mesmo! +10 pontos. Continue a missão!</div>
+                <div id="feedback-bad" class="feedback bad" role="status" hidden>Ainda não! Observe a explicação e tente outra alternativa.</div>
+                <div id="feedback-empty" class="feedback bad" role="status" hidden>Seus corações acabaram. Revise a explicação e tente esta fase novamente.</div>
+                <div class="actions">
+                  <button id="next-button" class="btn primary" type="button" hidden>Próxima etapa <span aria-hidden="true">&#8594;</span></button>
+                  <button id="retry-button" class="btn secondary" type="button" hidden>Tentar novamente</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="end-screen" class="panel end-screen" hidden aria-labelledby="end-title">
+            <span class="eyebrow">MISSÃO CUMPRIDA</span>
+            <h2 id="end-title" tabindex="-1">Você completou a viagem!</h2>
+            <p class="sub">Agora você consegue explicar como um pedido sai do navegador e encontra os recursos de um site. Compartilhe a encenação com a turma!</p>
+            <p class="pill score-result"><span aria-hidden="true">&#11088;</span> <span id="final-score">0</span> pontos conquistados</p>
+            <h3>O que você aprendeu?</h3>
+            <div class="summary-grid">
+              <div>Domínio é o endereço legível de um site.</div>
+              <div>Hospedagem guarda e disponibiliza os arquivos do site.</div>
+              <div>Servidor recebe pedidos e entrega recursos e respostas.</div>
+              <div>DNS encontra o IP correspondente a um domínio.</div>
+            </div>
+            <p class="sub">O caminho simplificado: usuário → domínio → DNS → servidor → resposta ao usuário.</p>
+            <button id="restart-button" class="btn primary" type="button">Reiniciar jogo <span aria-hidden="true">&#8634;</span></button>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
